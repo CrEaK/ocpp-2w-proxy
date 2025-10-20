@@ -22,3 +22,6 @@ COPY run.sh .
 # Make run script executable
 RUN chmod a+x run.sh
 
+# Start the add-on
+CMD ["/app/run.sh"]
+
