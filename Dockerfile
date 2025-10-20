@@ -26,6 +26,9 @@ COPY run.sh .
 # Make run script executable
 RUN chmod a+x run.sh
 
+# Copy run.sh to the proper location for Home Assistant
+COPY run.sh /
+
 # Run the add-on
-CMD ["/app/run.sh"]
+CMD ["/run.sh"]
 
