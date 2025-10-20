@@ -1,0 +1,40 @@
+{
+  "name": "OCPP 2-Way Proxy",
+  "version": "1.0.0",
+  "slug": "ocpp-2w-proxy",
+  "description": "A 2-way OCPP proxy that allows chargers to connect to two central management systems simultaneously",
+  "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
+  "startup": "application",
+  "boot": "auto",
+  "ports": {
+    "8321/tcp": 8321
+  },
+  "ports_description": {
+    "8321/tcp": "OCPP WebSocket proxy port"
+  },
+  "options": {
+    "log_level": "INFO",
+    "log_level_websockets_client": "INFO",
+    "log_level_websockets_server": "INFO",
+    "host_addr": "0.0.0.0",
+    "host_port": 8321,
+    "watchdog_stale": 500,
+    "watchdog_interval": 100,
+    "ping_timeout": 60,
+    "primary_server": "ws://ocpp.example.com:80",
+    "secondary_server": ""
+  },
+  "schema": {
+    "log_level": "list(DEBUG|INFO|WARNING|ERROR)?",
+    "log_level_websockets_client": "list(DEBUG|INFO|WARNING|ERROR)?",
+    "log_level_websockets_server": "list(DEBUG|INFO|WARNING|ERROR)?",
+    "host_addr": "str",
+    "host_port": "port",
+    "watchdog_stale": "int(1,3600)",
+    "watchdog_interval": "int(1,3600)",
+    "ping_timeout": "int(1,300)",
+    "primary_server": "url",
+    "secondary_server": "str?"
+  },
+  "image": "ghcr.io/creak/ocpp-2w-proxy/{arch}-addon-ocpp-2w-proxy"
+}
