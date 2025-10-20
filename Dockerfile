@@ -21,14 +21,9 @@ RUN pip3 install --no-cache-dir --break-system-packages -r requirements.txt
 
 # Copy application files
 COPY ocpp-2w-proxy.py .
-COPY run.sh .
 
-# Make run script executable
-RUN chmod a+x run.sh
-
-# Copy run.sh to the proper location for Home Assistant
-COPY run.sh /
-
-# Run the add-on
-CMD ["/run.sh"]
+# Setup s6-overlay service
+RUN mkdir -p /etc/services.d/ocpp-proxy
+COPY run.sh /etc/services.d/ocpp-proxy/run
+RUN chmod a+x /etc/services.d/ocpp-proxy/run
 
