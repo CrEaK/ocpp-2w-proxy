@@ -35,5 +35,6 @@
     "ping_timeout": "int(1,300)",
     "primary_server": "url",
     "secondary_server": "str?"
-  }
+  },
+  "init": false
 }

@@ -6,8 +6,7 @@ RUN \
   apk add --no-cache \
     python3 \
     py3-pip \
-    jq \
-    bash
+    jq
 
 # Set the working directory in the container
 WORKDIR /app
@@ -22,7 +21,4 @@ COPY run.sh .
 
 # Make run script executable
 RUN chmod a+x run.sh
-
-# Run the add-on
-CMD ["/bin/bash", "/app/run.sh"]
 
