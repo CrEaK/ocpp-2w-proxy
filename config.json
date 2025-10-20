@@ -35,6 +35,5 @@
     "ping_timeout": "int(1,300)",
     "primary_server": "url",
     "secondary_server": "str?"
-  },
-  "image": "ghcr.io/creak/ocpp-2w-proxy/{arch}-addon-ocpp-2w-proxy"
+  }
 }
