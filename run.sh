@@ -61,4 +61,4 @@ cat /app/ocpp-2w-proxy.ini
 echo ""
 
 # Start the application
-exec python3 /app/ocpp-2w-proxy.py
+python3 /app/ocpp-2w-proxy.py
